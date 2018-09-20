@@ -1,3 +1,5 @@
+source /etc/128technology/plugins/network-scripts/common/namespace_helpers
 source /etc/sysconfig/128T-ipsec
+echo "shutting down 128t-ipsec service" >> /tmp/sfc-ipsec.log
 systemctl stop 128t-ipsec
-ip netns del $IPSEC_NAMESPACE
+delete_namespace 128t-ipsec:1
